@@ -1,0 +1,44 @@
+name: Multi-OS Testing - Vanshdeep
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  test-ubuntu:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Ubuntu start message
+        run: echo "Testing on Ubuntu..."
+
+      - name: Display Ubuntu OS information
+        run: uname -a
+
+      - name: Create Ubuntu test file
+        run: echo "Ubuntu test by Vanshdeep Singh" > test-ubuntu.txt
+
+      - name: Display Ubuntu test file
+        run: cat test-ubuntu.txt
+
+      - name: Print Ubuntu completion message
+        run: echo "Ubuntu tests completed"
+
+  test-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Print Windows start message
+        run: echo "Testing on Windows..."
+
+      - name: Display Windows OS information
+        run: systeminfo
+
+      - name: Create Windows test file
+        run: echo "Windows test by Vanshdeep Singh" > test-windows.txt
+
+      - name: Display Windows test file
+        run: type test-windows.txt
+
+      - name: Print Windows completion message
+        run: echo "Windows tests completed"
